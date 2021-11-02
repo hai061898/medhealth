@@ -10,6 +10,8 @@ import 'package:medhealth/widgets/card_category.dart';
 import 'package:medhealth/widgets/card_product.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'components/search.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -154,8 +156,8 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           InkWell(
             onTap: () {
-              // Navigator.push(context,
-              //     MaterialPageRoute(builder: (context) => SearchProduct()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) =>const SearchProduct()));
             },
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
