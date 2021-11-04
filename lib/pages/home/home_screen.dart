@@ -5,6 +5,7 @@ import 'package:medhealth/api/url_api.dart';
 import 'package:medhealth/models/category_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:medhealth/models/product_model.dart';
+import 'package:medhealth/models/profile.dart';
 import 'package:medhealth/utils/constants.dart';
 import 'package:medhealth/widgets/card_category.dart';
 import 'package:medhealth/widgets/card_product.dart';
@@ -56,13 +57,13 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   late String userID;
-  // getPref() async {
-  //   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  getPref() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
 
-  //   setState(() {
-  //     userID = sharedPreferences.getString(PrefProfile.idUSer)!;
-  //   });
-  // }
+    setState(() {
+      userID = sharedPreferences.getString(PrefProfile.idUSer)!;
+    });
+  }
 
   // quantity = jumlahCart
 
