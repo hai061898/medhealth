@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medhealth/pages/login/login_screen.dart';
 import 'package:medhealth/widgets/button_primary.dart';
 import 'package:medhealth/widgets/ilustration.dart';
 import 'package:medhealth/widgets/logo_space.dart';
@@ -24,7 +25,7 @@ class SplashScreen extends StatelessWidget {
                 text: "GET STARTED",
                 onPressed: () {
                   Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => LoginPages()));
+                      MaterialPageRoute(builder: (context) =>const LoginScreen()));
                 },
               ),
             ),

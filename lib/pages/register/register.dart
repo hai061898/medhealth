@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:medhealth/api/url_api.dart';
+import 'package:medhealth/pages/login/login_screen.dart';
 import 'package:medhealth/utils/constants.dart';
 import 'package:medhealth/widgets/button_primary.dart';
 import 'package:medhealth/widgets/logo_space.dart';
@@ -55,7 +56,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LoginPages()),
+                                builder: (context) =>const LoginScreen()),
                             (route) => false);
                       },
                       child: const Text("Ok"))
@@ -289,7 +290,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     onTap: () {
                       Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(builder: (context) => LoginPages()),
+                          MaterialPageRoute(builder: (context) =>const LoginScreen()),
                           (route) => false);
                     },
                     child: Text(
