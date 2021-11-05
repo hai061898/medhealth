@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:medhealth/api/url_api.dart';
 import 'package:http/http.dart' as http;
+import 'package:medhealth/models/profile.dart';
 import 'package:medhealth/pages/main/main_screen.dart';
 import 'package:medhealth/pages/register/register.dart';
 import 'package:medhealth/utils/constants.dart';
@@ -39,15 +40,15 @@ class _LoginScreenState extends State<LoginScreen> {
     final data = jsonDecode(response.body);
     int value = data['value'];
     String message = data['message'];
-    // String idUser = data['user_id'];
-    // String name = data['name'];
-    // String email = data['email'];
-    // String phone = data['phone'];
-    // String address = data['address'];
-    // String createdAt = data['created_at'];
+    String idUser = data['user_id'];
+    String name = data['name'];
+    String email = data['email'];
+    String phone = data['phone'];
+    String address = data['address'];
+    String createdAt = data['created_at'];
 
     if (value == 1) {
-      // savePref(idUser, name, email, phone, address, createdAt);
+      savePref(idUser, name, email, phone, address, createdAt);
       showDialog(
           barrierDismissible: false,
           context: context,
@@ -86,18 +87,18 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  //  savePref(String idUser, String name, String email, String phone,
-  //     String address, String createdAt) async {
-  //   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-  //   setState(() {
-  //     sharedPreferences.setString(PrefProfile.idUSer, idUser);
-  //     sharedPreferences.setString(PrefProfile.name, name);
-  //     sharedPreferences.setString(PrefProfile.email, email);
-  //     sharedPreferences.setString(PrefProfile.phone, phone);
-  //     sharedPreferences.setString(PrefProfile.address, address);
-  //     sharedPreferences.setString(PrefProfile.cretedAt, createdAt);
-  //   });
-  // }
+   savePref(String idUser, String name, String email, String phone,
+      String address, String createdAt) async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    setState(() {
+      sharedPreferences.setString(PrefProfile.idUSer, idUser);
+      sharedPreferences.setString(PrefProfile.name, name);
+      sharedPreferences.setString(PrefProfile.email, email);
+      sharedPreferences.setString(PrefProfile.phone, phone);
+      sharedPreferences.setString(PrefProfile.address, address);
+      sharedPreferences.setString(PrefProfile.cretedAt, createdAt);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
