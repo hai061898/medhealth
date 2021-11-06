@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:medhealth/api/url_api.dart';
 import 'package:medhealth/models/product_model.dart';
 import 'package:http/http.dart' as http;
+import 'package:medhealth/pages/detail/detail_product.dart';
 import 'package:medhealth/utils/constants.dart';
 import 'package:medhealth/widgets/card_product.dart';
 import 'package:medhealth/widgets/ilustration.dart';
@@ -125,7 +126,7 @@ class _SearchProductState extends State<SearchProduct> {
                             crossAxisSpacing: 16,
                             mainAxisSpacing: 16),
                         itemBuilder: (context, i) {
-                          final y = listSearchProduct[i];
+                          final   y = listSearchProduct[i];
                           return InkWell(
                             onTap: () {
                               Navigator.push(

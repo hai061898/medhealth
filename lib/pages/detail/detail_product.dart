@@ -12,7 +12,7 @@ import 'package:medhealth/widgets/button_primary.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class DetailProduct extends StatefulWidget {
-  const DetailProduct({Key? key, this.productModel}) : super(key: key);
+  const DetailProduct(ProductModel y,  {Key? key, this.productModel}) : super(key: key);
   final ProductModel? productModel;
   @override
   _DetailProductState createState() => _DetailProductState();
